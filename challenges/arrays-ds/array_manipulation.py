@@ -1,21 +1,11 @@
-#!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
 # Complete the arrayManipulation function below.
 def arrayManipulation(n, queries):
     # n -> length of list
     # queries -> number of times to update list
     _list = [0 for x in range(n)]
     max_val = 0
-    left = None
-    right = None
     for start, end, to_add in queries:
-        _list[start-1] += to_add
+        _list[start - 1] += to_add
         try:
             _list[end] -= to_add
         except IndexError:
@@ -31,19 +21,19 @@ def arrayManipulation(n, queries):
     return max_val
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # fptr = open('output.dat', 'w')
 
     # nm = input().split()
-    n, m = 10000000,  100000
+    n, m = 10000000, 100000
 
     queries = []
 
-    with open('input.dat', 'r') as _file:
+    with open("input.dat", "r") as _file:
         in_data = _file.readlines()
 
     for data in in_data:
-        data.replace('\n', '')
+        data.replace("\n", "")
         queries.append(list(map(int, data.split())))
         a = queries
 

@@ -2,6 +2,7 @@
 
 import os
 
+
 # Complete the matchingStrings function below.
 def matchingStrings(strings, queries):
     string_count = dict()
